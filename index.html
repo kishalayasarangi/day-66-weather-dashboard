@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <div class="container">
+    <h1 class="app-title">🌤️ Weather Dashboard</h1>
+    <p class="subtitle">Live weather · Day 66 of 120</p>
+
+    <!-- SEARCH -->
+    <div class="search-card">
+      <div class="search-row">
+        <input type="text" id="cityInput"
+               placeholder="Search city e.g. Rourkela, Mumbai..."
+               onkeydown="if(event.key==='Enter') fetchWeather()"/>
+        <button class="btn-search" onclick="fetchWeather()">🔍 Search</button>
+        <button class="btn-gps" onclick="getLocation()">📍 My Location</button>
+      </div>
+      <div class="recent-searches" id="recentSearches"></div>
+    </div>
+
+    <!-- ERROR -->
+    <div class="error-card hidden" id="errorCard"></div>
+
+    <!-- MAIN WEATHER -->
+    <div class="weather-main hidden" id="weatherMain">
+
+      <!-- CURRENT -->
+      <div class="current-card" id="currentCard">
+        <div class="current-left">
+          <div class="city-name" id="cityName"></div>
+          <div class="country" id="countryName"></div>
+          <div class="weather-date" id="weatherDate"></div>
+          <div class="weather-icon-wrap">
+            <div class="weather-emoji" id="weatherEmoji"></div>
+            <div class="weather-desc" id="weatherDesc"></div>
+          </div>
+        </div>
+        <div class="current-right">
+          <div class="temp-main" id="tempMain"></div>
+          <div class="temp-feels" id="tempFeels"></div>
+          <div class="temp-range" id="tempRange"></div>
+        </div>
+      </div>
+
+      <!-- DETAILS -->
+      <div class="details-grid" id="detailsGrid"></div>
+
+      <!-- HOURLY -->
+      <div class="forecast-card">
+        <h3>Hourly Forecast</h3>
+        <div class="hourly-list" id="hourlyList"></div>
+      </div>
+
+      <!-- 5-DAY -->
+      <div class="forecast-card">
+        <h3>5-Day Forecast</h3>
+        <div class="daily-list" id="dailyList"></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <footer>Day 66 of 120 · Kishalaya Sarangi · NIT Rourkela</footer>
+  <script src="script.js"></script>
+</body>
+</html>
